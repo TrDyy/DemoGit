@@ -1,0 +1,26 @@
+﻿@using BTTL_Buoi9.Models;
+@model Sach
+@{
+    ViewBag.Title = "ChiTietSach";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<h2 class="text-center">Chi Tiết Sách</h2>
+<div style="padding: 20px;">
+    <div class="d-flex">
+        <div>
+            <img src="/HinhAnhSP/@Model.AnhBia" />
+            <div style="margin-top: 20px;">
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { @ms = Model.MaSach, @strUrl = Request.Url.ToString() })"><input type="submit" value="Mua Ngay" class="btn btn-primary" /></a>
+                <a href="@Url.Action("ShowSach","Sach")"><input type="submit" value="Mua Tiếp" class="btn btn-primary" /></a>
+            </div>
+        </div>
+
+        <div class="ms-3">
+            <h2>@Model.TenSach</h2>
+            <p>Tên chủ đề: @Model.ChuDe.TenChuDe</p>
+            <p>Tên NXB: @Model.NhaXuatBan.TenNXB</p>
+            <p>Mô tả: @Model.MoTa</p>
+            <p>Giá bán: <span style="color:red;">@Model.GiaBan</span></p>
+        </div>
+    </div>
+</div>

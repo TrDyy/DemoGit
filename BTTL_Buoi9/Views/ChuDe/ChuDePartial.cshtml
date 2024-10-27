@@ -1,0 +1,13 @@
+﻿@using BTTL_Buoi9.Models
+@model List<ChuDe>
+
+<div>
+    @foreach(ChuDe item in Model)
+    {
+        <p class="list-group-item">
+            @*<a href="" style="text-transform:uppercase; text-decoration:none;">*@
+            @Html.ActionLink(@item.TenChuDe, "ShowSachTheoChuDe", new { id = item.MaChuDe}, new { style = "text-transform:uppercase; text-decoration:none;" })
+            @*@item.TenChuDe </a>*@
+        </p>
+    }
+</div>

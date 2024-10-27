@@ -1,0 +1,12 @@
+﻿@using BTTL_Buoi9.Models
+@model List<NhaXuatBan>
+
+<div>
+    @foreach (NhaXuatBan item in Model)
+    {
+    <p class="list-group-item">
+        
+        @Html.ActionLink(@item.TenNXB, "ShowSachTheoNXB", new { id = item.MaNXB }, new { style = "text-transform:uppercase; text-decoration:none;" })
+    </p>
+    }
+</div>
